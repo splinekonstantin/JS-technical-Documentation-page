@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Technical Documentation Page</title>
+</head>
+<body>
+    
+
+    
+    <!-- Navigation -->
+    <nav id="navbar">
+
+        <div class="fixed">
+
+            <header>JavaScript <br> building blocks</header>
+
+            <ol>
+                <li><a href="#Overview" class="nav-link">Overview</a></li>
+                <li><a href="#Conditionals" class="nav-link">Conditionals</a></li>
+                <li><a href="#Looping_code" class="nav-link">Looping code</a></li>
+                <li><a href="#Functions" class="nav-link">Functions</a></li>
+                <li><a href="#Function_return_values" class="nav-link">Function return values</a></li>
+                <li><a href="#Introduction_to_events" class="nav-link">Introduction to events</a></li>
+            </ol>
+
+        </div>
+
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-doc">
+
+        <!-- overview section -->
+        <section class="main-section" id="Overview">
+
+            <header>Overview</header>
+            
+            <article>
+                <p>In this module, we continue our coverage of all JavaScript's key fundamental features, turning our attention to commonly-encountered types of code block such as conditional statements, loops, functions, and events. You've seen this stuff already in the course, but only in passing — here we'll discuss it all explicitly.</p>
+
+                <h2>Guides</h2>
+
+                <a href="#Conditionals">Conditionals</a>
+                <p>In any programming language, code needs to make decisions and carry out actions accordingly depending on different inputs. For example, in a game, if the player's number of lives is 0, then it's game over. In a weather app, if it is being looked at in the morning, show a sunrise graphic; show stars and a moon if it is nighttime. In this article we'll explore how conditional structures work in JavaScript.</p>
+
+                <a href="#Looping_code">Looping code</a>
+                <p>Sometimes you need a task done more than once in a row. For example, looking through a list of names. In programming, loops perform this job very well. Here we will look at loop structures in JavaScript.</p>
+
+                <a href="#Functions">Functions</a>
+                <p>Another essential concept in coding is functions. Functions allow you to store a piece of code that does a single task inside a defined block, and then call that code whenever you need it using a single short command — rather than having to type out the same code multiple times. In this article we'll explore fundamental concepts behind functions such as basic syntax, how to invoke and define functions, scope, and parameters.</p>
+
+                <a href="#Functions_return_value">Funtion return values</a>
+                <p>The last essential concept you must know about a function is return values. Some functions don't return a significant value after completion, but others do. It's important to understand what their values are, how to make use of them in your code, and how to make your own custom functions return useful values. 
+                </p>
+
+                <a href="#Introductions_to_events">Introduction to events</a>
+                <p>Events are actions or occurrences that happen in the system you are programming, which the system tells you about so you can respond to them in some way if desired. For example if the user clicks a button on a webpage, you might want to respond to that action by displaying an information box. In this final article we will discuss some important concepts surrounding events, and look at how they work in browsers.</p>
+            </article>
+
+        </section>
+
+        <!-- Conditionals section -->
+        <section class="main-section" id="Conditionals">
+
+            <header>Conditionals</header>
+
+            <article>
+                <h2>if ... else statements</h2>
+                
+                <p>Let's look at by far the most common type of conditional statement you'll use in JavaScript — the humble <code>if ... else</code> statement.</p>
+
+                <p>Basic <code>if ... else</code> syntax looks like so in pseudocode:</p>
+
+                <code class="block">if (condition) {
+    code to ran if condition is true
+} else {
+    run some other code instead
+}</code>
+
+                <p>Here we've got:</p>
+
+                <ol>
+                    <li>The keyword if followed by some parentheses.</li>
+                    <li>A condition to test, placed inside the parentheses (typically "is this value bigger than this other value", or "does this value exist"). This condition will make use of the comparison operators we discussed in the last module and will return true or false.</li>
+                    <li>A set of curly braces, inside which we have some code — this can be any code we like, and will only be run if the condition returns true.</li>
+                    <li>The keyword else.</li>
+                    <li>Another set of curly braces, inside which we have some more code — this can be any code we like, and will only be run if the condition is not true — or in other words, the condition is false.</li>
+                </ol>
+
+                <p>This code is pretty human-readable — it is saying "if the condition returns true, run code A, else run code B"</p>
+            </article>
+
+        </section>
+
+        <!-- Looping section -->
+        <section class="main-section" id="Looping_code">
+
+            <header>Looping code</header>
+
+            <article>
+                <h2>The standard for loop</h2>
+
+                <p>Let's start exploring some specific loop constructs. The first, which you'll use most of the time, is the for loop — this has the following syntax:</p>
+
+                <code class="block">for (initializer; exit-condition; final-expression) {
+    // code to run
+}</code>
+
+                <p>Here we have:</p>
+
+                <ol>
+                    <li>The keyword <code>for</code>, followed by some parentheses.</li>
+                    <li>Inside the parentheses we have three items, separated by semi-colons:
+                        <ol>
+                        <li>An initializer — this is usually a variable set to a number, which is incremented to count the number of times the loop has run. It is also sometimes referred to as a counter variable.</li>
+                        <li>An exit-condition — as mentioned before, this defines when the loop should stop looping. This is generally an expression featuring a comparison operator, a test to see if the exit condition has been met.</li>
+                        <li>A final-expression — this is always evaluated (or run) each time the loop has gone through a full iteration. It usually serves to increment (or in some cases decrement) the counter variable, to bring it closer to the exit condition value.</li>
+                    </ol></li>
+                    <li>Some curly braces that contain a block of code — this code will be run each time the loop iterates.</li>
+                </ol>
+            </article>
+            
+        </section>
+
+        <!-- functions section -->
+        <section class="main-section" id="Functions">
+
+            <header>Functions</header>
+
+            <article>
+                <h2>Built-in browser functions</h2>
+
+                <p>We've made use of functions built in to the browser a lot in this course. Every time we manipulated a text string, for example:</p>
+
+                <code class="block">var myText = 'I am a string';
+var newString = myText.replace('string', 'sausage');
+console.log(newString);
+// the replace() string function takes a string,
+// replaces one substring with another, and returns
+// a new string with the replacement made</code>
+
+                <p>...we were using a function!</p>
+
+                <p>The JavaScript language has many built-in functions to allow you to do useful things without having to write all that code yourself. In fact, some of the code you are calling when you invoke (a fancy word for run, or execute) a built in browser function couldn't be written in JavaScript — many of these functions are calling parts of the background browser code, which is written largely in low-level system languages like C++, not web languages like JavaScript.</p>
+
+                <p>Bear in mind that some built-in browser functions are not part of the core JavaScript language — some are defined as part of browser APIs, which build on top of the default language to provide even more functionality (refer to this early section of our course for more descriptions). We'll look at using browser APIs in more detail in a later module.</p>
+            </article>
+
+        </section>
+
+        <!-- function return values section -->
+        <section class="main-section" id="Function_return_values">
+
+            <header>Function return values</header>
+
+            <article>
+                <h2>What are return values?</h2>
+
+                <p>Return values are just what they sound like — values returned by the function when it completes. You've already met return values a number of times, although you may not have thought about them explicitly. Let's return to some familiar code:</p>
+
+                <code class="block">var myText = 'I am a string';
+var newString = myText.replace('string', 'sausage');
+console.log(newString);
+// the replace() string function takes a string,
+// replaces one substring with another, and returns
+// a new string with the replacement made</code>
+
+                <p>We saw exactly this block of code in our first function article. We are invoking the replace() function on the myText string, and passing it two parameters — the substring to find, and the substring to replace it with. When this function completes (finishes running), it returns a value, which is a new string with the replacement made. In the code above, we are saving this return value as the value of the newString variable.</p>
+            </article>
+
+        </section>
+
+        <!-- events section -->
+        <section class="main-section" id="Introduction_to_events">
+
+            <header>Introduction to events</header>
+
+            <article>
+                <h2>A series of fortunate events</h2>
+
+                <p>As mentioned above, events are actions or occurrences that happen in the system you are programming — the system will fire a signal of some kind when an event occurs, and also provide a mechanism by which some kind of action can be automatically taken (e.g. some code running) when the event occurs. For example in an airport when the runway is clear for a plane to take off, a signal is communicated to the pilot, and as a result, they commence piloting the plane.</p>
+
+                <p>In the case of the Web, events are fired inside the browser window, and tend to be attached to a specific item that resides in it — this might be a single element, set of elements, the HTML document loaded in the current tab, or the entire browser window. There are a lot of different types of events that can occur, for example:</p>
+                
+                <ul>
+                    <li>The user clicking the mouse over a certain element or hovering the cursor over a certain element.</li>
+                    <li>The user pressing a key on the keyboard.</li>
+                    <li>The user resizing or closing the browser window.</li>
+                    <li>A web page finishing loading.</li>
+                    <li>A form being submitted.</li>
+                    <li>A video being played, or paused, or finishing play.</li>
+                    <li>An error occurring.</li>
+                </ul>
+
+                <p>You will gather from this (and from glancing at the MDN Event reference) that there are a lot of events that can be responded to.</p>
+
+                <p>Each available event has an event handler, which is a block of code (usually a user-defined JavaScript function) that will be run when the event fires. When such a block of code is defined to be run in response to an event firing, we say we are registering an event handler. Note that event handlers are sometimes called event listeners — they are pretty much interchangeable for our purposes, although strictly speaking, they work together. The listener listens out for the event happening, and the handler is the code that is run in response to it happening.</p>
+            </article>
+
+        </section>
+
+    </main>
+
+    
+</body>
+</html>
